@@ -30,6 +30,15 @@ export default class ClientStorage {
   }
 
   /**
+   * Return the entire data object.
+   *
+   * @return {object} The data object.
+   */
+  getAllItems() {
+    return this.data;
+  }
+
+  /**
    * When passed a key name, will return that key's value, or null if the key
    * does not exist, in the given Storage object.
    *
