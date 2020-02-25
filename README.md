@@ -61,13 +61,13 @@ A `DOMString` of the key that was defined in the `constructor`.
 
 ---
 
-### `getAllItems()`
+### `getItems()`
 
-The **`getAllItems()`** method of the `ClientStorage` interface, returns the
-entire data object.
+The **`getItems()`** method of the `ClientStorage` interface, returns the entire
+data object.
 
 ```js
-const state = appState.getAllItems();
+const state = appState.getItems();
 ```
 
 #### Return
@@ -152,3 +152,7 @@ appState.clear();
 #### Return
 
 `undefined`
+
+## TODO
+
+- [ ] Add `setItems` method to replace the data object.

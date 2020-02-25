@@ -34,7 +34,7 @@ export default class ClientStorage {
    *
    * @return {object} The data object.
    */
-  getAllItems() {
+  getItems() {
     return this.data;
   }
 
