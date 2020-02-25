@@ -5,20 +5,23 @@ const w = window,
   r = "removeItem";
 
 export default class ClientStorage {
-  constructor(name, persist = true) {
+  constructor(name, o = { persist: true }) {
     this.n = name;
-    this.f = persist ? "localStorage" : "sessionStorage";
+    this.f = o.persist ? "localStorage" : "sessionStorage";
     this.d = this.l();
   }
-  [g](key) {
-    return this.d[key];
+  key() {
+    return this.n;
   }
-  [u](key, value) {
-    this.d[key] = value;
+  [g](k) {
+    return this.d[k];
+  }
+  [u](k, v) {
+    this.d[k] = v;
     this.s();
   }
-  [r](key) {
-    delete this.d[key];
+  [r](k) {
+    delete this.d[k];
     this.s();
   }
   clear() {
