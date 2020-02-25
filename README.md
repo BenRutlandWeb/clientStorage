@@ -16,9 +16,9 @@ synced with changes made through the API.
 
 ### `constructor(name [, options])`
 
-The **constructor()** method of the ClientStorage interface, Sets the key name
-and the storage type, either localStorage or sessionStorage, and loads the data
-object if it exists in the storage.
+The **`constructor()`** method of the `ClientStorage` interface, Sets the key
+name and the storage type, either localStorage or sessionStorage, and loads the
+data object if it exists in the storage.
 
 ```js
 // localStorage
@@ -34,11 +34,11 @@ const client = new ClientStorage("app-state", { persist: false });
 create/update.
 
 `options` _(optional)_ - An options `Object` specifies characteristics about
-the ClientStorage. The available options are:
+the `ClientStorage`. The available options are:
 
 - `persist` - A `Boolean` indicating whether to persist the data between
-  sessions. If false, ClientStorage uses sessionStorage, otherwise localStorage
-  is used. Defaults to `true`.
+  sessions. If false, `ClientStorage` uses sessionStorage, otherwise
+  localStorage is used. Defaults to `true`.
 
 #### Return
 
@@ -48,8 +48,8 @@ the ClientStorage. The available options are:
 
 ### `key()`
 
-The **key()** method of the ClientStorage interface, returns the name of the key
-given in the constructor.
+The **`key()`** method of the `ClientStorage` interface, returns the name of the
+key given in the constructor.
 
 ```js
 const key = client.key();
@@ -63,9 +63,9 @@ A `DOMString` of the key that was defined in the `constructor`.
 
 ### `getItem(keyName)`
 
-The **getItem()** method of the ClientStorage interface, when passed a key name,
-will return that key's value, or null if the key does not exist, in the given
-Storage object.
+The **`getItem()`** method of the `ClientStorage` interface, when passed a key
+name, will return that key's value, or null if the key does not exist, in the
+given Storage object.
 
 ```js
 const darkMode = client.getItem("darkMode");
@@ -84,9 +84,9 @@ The value of the key. If the key does not exist, `null` is returned.
 
 ### `setItem(keyName, keyValue)`
 
-The **setItem()** method of the ClientStorage interface, when passed a key name
-and value, will add that key to the given Storage object, or update that key's
-value if it already exists.
+The **`setItem()`** method of the `ClientStorage` interface, when passed a key
+name and value, will add that key to the given Storage object, or update that
+key's value if it already exists.
 
 ```js
 client.setItem("darkMode", true);
@@ -96,6 +96,7 @@ client.setItem("darkMode", true);
 
 `keyName` - A `DOMString` containing the name of the key you want to
 create/update.
+
 `keyValue` - The value you want to give the key you are creating/updating.
 
 #### Return
@@ -106,8 +107,8 @@ create/update.
 
 ### `removeItem(keyName)`
 
-The **removeItem()** method of the ClientStorage interface, when passed a key
-name, will remove that key from the given Storage object if it exists. If
+The **`removeItem()`** method of the `ClientStorage` interface, when passed a
+key name, will remove that key from the given Storage object if it exists. If
 there is no item associated with the given key, this method will do nothing.
 
 ```js
@@ -126,8 +127,8 @@ client.removeItem("darkMode");
 
 ### `clear()`
 
-The **clear()** method of the ClientStorage interface clears the key stored in a
-given Storage object.
+The **`clear()`** method of the `ClientStorage` interface clears the key stored
+in a given Storage object.
 
 ```js
 client.clear();
