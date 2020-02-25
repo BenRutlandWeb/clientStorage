@@ -25,6 +25,7 @@ export default class ClientStorage {
     this.s();
   }
   clear() {
+    this.d = {};
     w[this.f][r](this.n);
   }
   l(d) {
