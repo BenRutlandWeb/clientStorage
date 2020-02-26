@@ -46,7 +46,7 @@ export default class ClientStorage {
    * @return {undefined}
    */
   setItems(value) {
-    if (Object.prototype.toString.call(value) === "[object Object]") {
+    if (this._isObject(value)) {
       this._data = value;
       this._save();
     } else {
@@ -62,8 +62,12 @@ export default class ClientStorage {
    * @return {undefined}
    */
   mergeItems(value) {
-    Object.assign(this._data, value);
-    this._save();
+    if (this._isObject(value)) {
+      Object.assign(this._data, value);
+      this._save();
+    } else {
+      throw new TypeError("value is not an Object");
+    }
   }
 
   /**
@@ -138,5 +142,9 @@ export default class ClientStorage {
    */
   _save() {
     window[this.func].setItem(this.keyName, JSON.stringify(this._data));
+  }
+
+  _isObject(value) {
+    return Object.prototype.toString.call(value) === "[object Object]";
   }
 }
