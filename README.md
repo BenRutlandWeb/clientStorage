@@ -14,7 +14,7 @@ synced with changes made through the API.
 
 ## Methods
 
-### `constructor(name [, options])`
+### `constructor(keyName [, options])`
 
 The **`constructor()`** method of the `ClientStorage` interface, Sets the key
 name and the storage type, either localStorage or sessionStorage, and loads the
@@ -73,6 +73,21 @@ const state = appState.getItems();
 #### Return
 
 The data `Object`.
+
+---
+
+### `setItems()`
+
+The **`setItems(value)`** method of the `ClientStorage` interface, adds a data object
+to the Storage object.
+
+```js
+const state = appState.setItems({ darkmode: true });
+```
+
+#### Return
+
+`undefined`
 
 ---
 
@@ -152,7 +167,3 @@ appState.clear();
 #### Return
 
 `undefined`
-
-## TODO
-
-- [ ] Add `setItems` method to replace the data object.

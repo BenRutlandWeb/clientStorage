@@ -39,6 +39,22 @@ export default class ClientStorage {
   }
 
   /**
+   * Set multiple items in an object.
+   *
+   * @param {object} value A data object to store in the Storage object.
+   *
+   * @return {undefined}
+   */
+  setItems(value) {
+    if (Object.prototype.toString.call(value) === "[object Object]") {
+      this.data = value;
+      this.save();
+    } else {
+      throw new TypeError("value is not an Object");
+    }
+  }
+
+  /**
    * When passed a key name, will return that key's value, or null if the key
    * does not exist, in the given Storage object.
    *
