@@ -55,6 +55,18 @@ export default class ClientStorage {
   }
 
   /**
+   * Merge the data object with a new object.
+   *
+   * @param {object} value The new object to be merged with the data object.
+   *
+   * @return {undefined}
+   */
+  mergeItems(value) {
+    Object.assign(this._data, value);
+    this._save();
+  }
+
+  /**
    * When passed a key name, will return that key's value, or null if the key
    * does not exist, in the given Storage object.
    *

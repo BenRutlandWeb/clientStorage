@@ -91,6 +91,21 @@ const state = appState.setItems({ darkmode: true });
 
 ---
 
+### `mergeItems()`
+
+The **`mergeItems(value)`** method of the `ClientStorage` interface, merges the
+given object with the data object to the Storage object.
+
+```js
+const state = appState.mergeItems({ darkmode: true });
+```
+
+#### Return
+
+`undefined`
+
+---
+
 ### `getItem(keyName)`
 
 The **`getItem()`** method of the `ClientStorage` interface, when passed a key
