@@ -48,7 +48,7 @@ export default class ClientStorage {
   setItems(value) {
     if (Object.prototype.toString.call(value) === "[object Object]") {
       this._data = value;
-      this.save();
+      this._save();
     } else {
       throw new TypeError("value is not an Object");
     }
