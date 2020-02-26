@@ -144,6 +144,14 @@ export default class ClientStorage {
     window[this.func].setItem(this.keyName, JSON.stringify(this._data));
   }
 
+  /**
+   * Private: Check if the given value is an Object.
+   *
+   * @param {mixed} value The value to check is an object
+   *
+   * @return {boolean}    If the value given is an object, return true, else
+   *                      return false.
+   */
   _isObject(value) {
     return Object.prototype.toString.call(value) === "[object Object]";
   }
