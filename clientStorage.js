@@ -153,6 +153,6 @@ export default class ClientStorage {
    *                      return false.
    */
   _isObject(value) {
-    return Object.prototype.toString.call(value) === "[object Object]";
+    return toString.call(value) === "[object Object]";
   }
 }
