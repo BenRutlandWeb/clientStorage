@@ -17,7 +17,7 @@ export default class ClientStorage {
   constructor(keyName, options = { persist: true }) {
     this.keyName = keyName;
     this.func = options.persist ? "localStorage" : "sessionStorage";
-    this.data = this._load();
+    this._data = this._load();
   }
 
   /**
@@ -35,7 +35,7 @@ export default class ClientStorage {
    * @return {object} The data object.
    */
   getItems() {
-    return this.data;
+    return this._data;
   }
 
   /**
@@ -47,7 +47,7 @@ export default class ClientStorage {
    */
   setItems(value) {
     if (Object.prototype.toString.call(value) === "[object Object]") {
-      this.data = value;
+      this._data = value;
       this.save();
     } else {
       throw new TypeError("value is not an Object");
@@ -65,7 +65,7 @@ export default class ClientStorage {
    *                         null is returned.
    */
   getItem(keyName) {
-    return this.data[keyName];
+    return this._data[keyName];
   }
 
   /**
@@ -79,7 +79,7 @@ export default class ClientStorage {
    * @return {undefined}
    */
   setItem(keyName, keyValue) {
-    this.data[keyName] = keyValue;
+    this._data[keyName] = keyValue;
     this._save();
   }
 
@@ -93,7 +93,7 @@ export default class ClientStorage {
    * @return {undefined}
    */
   removeItem(keyName) {
-    delete this.data[keyName];
+    delete this._data[keyName];
     this._save();
   }
 
@@ -103,7 +103,7 @@ export default class ClientStorage {
    * @return {undefined}
    */
   clear() {
-    this.data = {};
+    this._data = {};
     window[this.func].removeItem(this.keyName);
   }
 
@@ -125,6 +125,6 @@ export default class ClientStorage {
    * @return {undefined}
    */
   _save() {
-    window[this.func].setItem(this.keyName, JSON.stringify(this.data));
+    window[this.func].setItem(this.keyName, JSON.stringify(this._data));
   }
 }
